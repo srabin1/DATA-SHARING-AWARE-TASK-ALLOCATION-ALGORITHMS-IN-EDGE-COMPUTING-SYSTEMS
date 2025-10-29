@@ -36,3 +36,7 @@ online algorithms at the expense of a small increase in the amount of data trans
 network and a small increase in execution time. We provide a summary of the findings that
 can be used as a guideline for choosing a specific algorithm for a given practical scenario
 characterized by the tasks’ CPU demand and their data sharing characteristics.
+
+![Model Architecture](images/DSTA.png)
+
+![Model Architecture](images/DSTA2.png)
