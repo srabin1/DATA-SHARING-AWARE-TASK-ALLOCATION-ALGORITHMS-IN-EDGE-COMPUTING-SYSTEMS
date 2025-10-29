@@ -10,6 +10,7 @@ that some user tasks may operate on the same data items. Making the task allocat
 algorithm aware of the existing data sharing characteristics of tasks can help reduce the
 network load at a negligible profit loss by allocating more tasks sharing data on the same
 server.
+
 In this dissertation, we formulate the data sharing-aware task allocation problem that
 makes decisions on task allocation for maximized profit and minimized network load by
 considering the data-sharing characteristics of tasks. In addition, because the problem is
@@ -17,8 +18,9 @@ NP-hard, we design an offline algorithm called DSTA, which finds a close to opti
 to the problem in polynomial time. We analyze the performance of our algorithm
 against a state-of-the-art baseline that only maximizes profit. Our analysis shows that
 DSTA leads to about eight times lower data load on the network while being within 1.03
-times of the total profit on average compared to the baseline. In addition, we introduce
-the Online Data Sharing-aware Task Allocation (ODSTA) problem and design online algorithms
+times of the total profit on average compared to the baseline. 
+
+In addition, we introduce the Online Data Sharing-aware Task Allocation (ODSTA) problem and design online algorithms
 for task allocation in edge computing that take into account the sharing of data
 among the tasks offloaded to the same server. We perform an extensive performance analysis
 by comparing our proposed data sharing-aware online algorithms with several baseline
