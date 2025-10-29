@@ -38,4 +38,5 @@ can be used as a guideline for choosing a specific algorithm for a given practic
 characterized by the tasks’ CPU demand and their data sharing characteristics.
 
 ![Model Architecture](images/DSTA.png)
+
 ![Model Architecture](images/DSTA2.png)
