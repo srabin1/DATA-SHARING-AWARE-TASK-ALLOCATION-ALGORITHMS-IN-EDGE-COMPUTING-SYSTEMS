@@ -1,0 +1,8 @@
+p=0.25, 0.45, 0.85
+
+Total servers capacity: 400
+Low request: 276
+Average: 964
+High sharing: 1933
+request: first row
+profit: second row

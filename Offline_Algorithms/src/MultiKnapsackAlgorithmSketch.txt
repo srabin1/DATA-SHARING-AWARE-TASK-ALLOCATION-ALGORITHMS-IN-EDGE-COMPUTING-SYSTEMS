@@ -1,0 +1,51 @@
+Tasks = {1,2,3,4}
+Knapsacks = {a,b,c}
+
+1. calculate all possible subsets=powerSet= 2^n
+2^4=16
+{{},{1},...,{1,2},...,{1,2,3},...,{1,2,3,4}}
+
+currentSubset={1,2,3}
+
+2.calculate all partitions for current subSet=bellNumber=
+    (keep it in mind that number of partitions should not exceed number od knapsacks)
+{1},{2,3}
+{2},{1,3}
+{3},{1,2}
+
+{3},{1,2}
+3.prepare current partition for solving current multiKnapsack
+    (keep it in mind that current problem has "3" knapsacks)
+{3},{1,2},{}
+
+4.calculate all possible permutations of current partitions for current multiKnapsack
+a        b      c
+{3}   ,{1,2}   ,{}
+{3}   ,{}      ,{1,2}
+{1,2} ,{3}     ,{}
+{1,2} ,{}      ,{3}
+{}    ,{3}     ,{1,2}
+{}    ,{1,2}   ,{3}
+
+5. solve multiKnapsack with each of the permutations (calculate the totalProfit)
+
+6. Add the multiKnapsack solution to solution list
+Sample MultiKnapsack Solution:
+{
+TaskCollections:{{3},{1,2},{}}
+    KnapsackList:{
+                    a:{
+                        tasks={3},
+                        profit=x
+                    }
+                    b:{
+                        tasks={1,2},
+                        profit=y
+                    }
+                    c:{
+                        tasks={},
+                        profit=0
+                    }
+                }
+    totalProfit=x+y+0
+}
