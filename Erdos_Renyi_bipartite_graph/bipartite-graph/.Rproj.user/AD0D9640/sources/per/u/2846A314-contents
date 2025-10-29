@@ -1,0 +1,52 @@
+library(igraph)
+library(ggplot2)
+library(dplyr)
+#low_request<-sample(1.7:5.0,40,prob=c(.4,.03,.2,.9,.9), replace=TRUE)
+low_request<-(runif(40, min=2.0, max=5.0))
+low_request
+typeof(low_request)
+sum(low_request)
+
+#generate request: average demand
+avg_request<-(runif(40, min=5.0, max=20.0))
+avg_request
+sum(avg_request)
+
+#generate request: high demand
+high_request<-(runif(40, min=13.0, max=50.0))
+high_request
+sum(high_request)
+
+###############################Constant servers: 40, case 2: 60 users##############################
+
+low_request<-(runif(60, min=2.0, max=5.0))
+low_request
+typeof(low_request)
+sum(low_request)
+
+#generate request: average demand
+avg_request<-(runif(60, min=5.0, max=15.0))
+avg_request
+sum(avg_request)
+
+#generate request: high demand
+high_request<-(runif(60, min=13.0, max=40.0))
+high_request
+sum(high_request)
+
+###############################Constant servers: 40, case 3: 80 users############################
+low_request<-(runif(80, min=2.0, max=5.0))
+low_request
+typeof(low_request)
+sum(low_request)
+
+#generate request: average demand
+avg_request<-(runif(80, min=5.0, max=15.0))
+avg_request
+sum(avg_request)
+
+#generate request: high demand
+high_request<-(runif(80, min=13.0, max=35.0))
+high_request
+sum(high_request)
+

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1624281477852.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "942251964",
+    "id" : "4208C0D6",
+    "lastKnownWriteTime" : 1627582050,
+    "last_content_update" : 1627582050111,
+    "path" : "~/R/bipartite graph/Erdos-Renyi.R",
+    "project_path" : "Erdos-Renyi.R",
+    "properties" : {
+        "cursorPosition" : "55,19",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

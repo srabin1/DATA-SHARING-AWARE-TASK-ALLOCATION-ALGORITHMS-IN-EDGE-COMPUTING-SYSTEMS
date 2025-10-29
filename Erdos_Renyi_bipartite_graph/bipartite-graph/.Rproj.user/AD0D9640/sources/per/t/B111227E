@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1628130758403.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "1051150314",
+    "id" : "B111227E",
+    "lastKnownWriteTime" : 1628135901,
+    "last_content_update" : 1628135901921,
+    "path" : "~/R-Excersie/plot.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "83,11",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

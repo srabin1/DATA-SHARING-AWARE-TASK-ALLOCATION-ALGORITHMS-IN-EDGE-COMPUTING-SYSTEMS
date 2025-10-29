@@ -1,0 +1,135 @@
+#install.packages("igraph")
+#install.packages("ggplot2")
+library(igraph)
+library(ggplot2)
+library(dplyr)
+#######################demand ratio##########################################
+#Constant servers: 40, case 1: 40 users
+
+
+
+
+#generate random number for profit
+profit<-(runif(100, min=2, max=40))
+profit
+typeof(profit)
+#store profit in a column
+dataframe.var<-data.frame(cbind(profit))
+dataframe.var
+
+write.table(dataframe.var, sep = "," , file="C:/Users/sanaz.rabinia/proftit.csv")
+
+#generate request: low demand
+#low_request<-((runif(40, min=2, max=5))*((as.numeric(max - min)) + 1) + as.numeric(max))
+#sample(1:5,40,prob=c(.01,.01,.1,.9,.9), replace=TRUE)
+
+
+
+#################################Constant servers: 40, case 4: 100 users##########################
+low_request4<-(runif(100, min=2.0, max=4.0))
+low_request4
+typeof(low_request4)
+sum(low_request4)
+
+#generate request: average demand
+avg_request4<-(runif(100, min=5.0, max=13.0))
+avg_request4
+sum(avg_request4)
+
+#generate request: high demand
+high_request4<-(runif(100, min=8.0, max=30.0))
+high_request4
+sum(high_request)4
+################################sharing##################################
+#sample_bipartite(10, 5, p=.1)
+set.seed(123)
+options(digits=2)
+# generate random bipartite graph.
+g <- sample_bipartite(100, 100, p=.2)
+# check the type attribute:
+V(g)$type
+
+# define color and shape mappings.
+col <- c("steelblue", "orange")
+shape <- c("circle", "circle")
+
+plot(g, layout=layout.bipartite, edge.width= 2, edge.color= "black", 
+     vertex.color = col[as.numeric(V(g)$type)+1],
+     vertex.shape = shape[as.numeric(V(g)$type)+1]
+)
+
+inc_matrix <- as_incidence_matrix(g)
+inc_matrix
+typeof(inc_matrix)
+double_inc_matrix <- as.numeric(unlist(inc_matrix))
+typeof(double_inc_matrix)
+double_inc_matrix
+write.table(inc_matrix, file="C:/Users/sanaz.rabinia/my_inc_matrix_names.txt", row.names=FALSE, col.names=FALSE)
+#data_size1 <-read.table("C:/Users/sanaz.rabinia/data-size1.txt")
+data_size1 <-read.csv("C:/Users/sanaz.rabinia/data-size1 - Copy.csv")
+data_size1
+sum(data_size1)
+typeof(data_size1)
+data_size1[2,2]
+
+
+print(inc_matrix[,1])
+
+i=2
+data_size1$value[1]
+
+
+for(j in 1:100)
+{
+  for (i in 1:100){
+     print(inc_matrix[i,j])
+     
+  }
+}
+
+i=1
+j=1
+inc_matrix[i,j]
+
+# if (inc_matrix[i,j]== 1){
+#   inc_matrix[i,j] = data_size1$value[1]
+# }
+
+
+for(j in 1L:100L)
+{
+  for (i in 1L:100L){
+    if (inc_matrix[i,j]== 1)
+      inc_matrix[i,j]= data_size1$value[j]
+  }
+}
+
+inc_matrix
+write.table(inc_matrix, file="C:/Users/sanaz.rabinia/inc_matrix.txt", row.names=FALSE, col.names=FALSE)
+
+inc_matrix2<-rbind(inc_matrix, c(low_request4))
+write.table(inc_matrix2, file="C:/Users/sanaz.rabinia/inc_matrix2.txt", row.names=FALSE, col.names=FALSE)
+
+inc_matrix3<-rbind(inc_matrix2, c(profit))
+
+
+
+inc_matrix3 <- round(inc_matrix3, digits = 2)
+
+
+
+for(j in 1L:100L)
+{
+  
+  inc_matrix3[101,j] = paste(inc_matrix3[101,j],",",sep = "")
+  inc_matrix3[102,j] = paste(inc_matrix3[102,j],",",sep = "") 
+  print(inc_matrix3[102,j])
+ 
+}
+
+inc_matrix3 = noquote(inc_matrix3)
+write.table(inc_matrix3, file="C:/Users/sanaz.rabinia/inc_matrix3.txt", row.names=FALSE, col.names=FALSE, quote = FALSE)
+
+
+
+

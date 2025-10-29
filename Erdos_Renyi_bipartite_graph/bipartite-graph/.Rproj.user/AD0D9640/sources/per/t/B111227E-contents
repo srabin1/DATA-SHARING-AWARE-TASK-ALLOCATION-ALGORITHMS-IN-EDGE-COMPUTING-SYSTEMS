@@ -1,0 +1,105 @@
+getwd()
+setwd("C:\\Users\\sanaz.rabinia\\Documents\\R-Excersie")
+getwd()
+
+movies <- read.csv("P2-Movie-Ratings.csv")
+head(movies)
+colnames(movies) <-c("Film", "Genre", "CriticRating", "AudienceRating", 
+                  "BudgetMillions")
+head(movies)
+tail(movies)
+str(movies)
+summary(movies)
+
+factor(movies$Year)
+movies$Year <- factor(movies$Year)
+summary(movies)
+str(movies)
+
+#-------------------------------Aesthetics------------------
+library(ggplot2)
+ggplot(data=movies, aes(x=CriticRating, y=AudienceRating))
+ggplot(data=movies, aes(x=CriticRating, y=AudienceRating))+ geom_point()
+#add color
+ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, 
+                        colour=Genre, size=BudgetMillions)) + geom_point()
+#>>> this is #1 (we will improve it)
+
+
+#-----------------------Plotting with layers
+#we create a data by assigning p to the plot
+p <- ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, 
+                           colour=Genre, size=BudgetMillions)) + geom_point()
+#points
+p + geom_point()
+
+#lines
+p + geom_line()
+
+#multiple layers
+p+ geom_line() + geom_point()
+p+ geom_point() + geom_line()
+
+
+#Overriding Aesthetics
+q <- ggplot(data=movies, aes(x=CriticRating , y=AudienceRating, colour=Genre, size= BudgetMillions) )
+q +geom_point()
+#overriding aes
+#example 1
+q + geom_point(aes(size=CriticRating))
+
+#example 2
+q + geom+point (aes(colour=BudgetMillions))
+q + geom_point()
+
+#example 3
+q +geom_point(aes(x=BudgetMillions))
+
+#example 4
+q +geom_line(size=1)+ geom_point()
+
+
+#---------------------Mapping vs Setting
+
+r <-ggplot(data=movies, aes(x=CriticRating, y=AudienceRating))
+r + geom_point()
+
+#Add colour
+#1. Mapping (what we've done so far):
+r+ geom_point(aes(colour=Genre))
+#2. Setting
+r + geom_point(colour="DarkGreen")
+
+#Error:
+#r + geom_point((aescolour="DarkGreen"))
+
+#1.Mapping
+r+ geom_point(aes(size=BudgetMillions))
+#2. Setting
+r + geom_point(size=10)
+#--------------------Histogram and Density Charts
+s <- ggplot(data= movies, aes(x=BudgetMillions))
+s +geom_histogram(binwidth=10)
+
+#add colour
+s +geom_histogram(binwidth=10, aes(fill=Genre))
+
+#add a border
+s +geom_histogram(binwidth=10, aes(fill=Genre), colour="Black")
+#>>> we will improve it 
+# sometimes you may need density charts:
+s +geom_density()
+s + geom_density(aes(fill=Genre), position="stack")
+
+#---------------------Starting Layer Tips
+
+t<- ggplot(data=movies, aes(x=AudienceRating))
+t+ geom_histogram(binwidth=10, fill= "White", colour= "Blue")
+
+#another way to achieve the same result:
+t <-ggplot(data=movies)
+t + geom_histogram(binwidth= 10, aes(x=AudienceRating), 
+                  fill="White", colour ="Blue")
+
+#>>> 4th chart
+
